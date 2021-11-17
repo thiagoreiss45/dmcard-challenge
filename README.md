@@ -38,3 +38,4 @@ def isExpressionValid(exp):
 
 # Saída
 
+O programa gera o arquivo "output.txt", com o conteúdo no formato esperado do desafio
