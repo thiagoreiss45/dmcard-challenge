@@ -20,10 +20,8 @@ def isExpressionValid(exp):
     else:
         return 'incorrect'
 
-
-is_first_line = True
-
 # Percorrendo cada linha do arquivo de input e escrevendo o retorno no arquivo de output
+is_first_line = True
 for line in input_file:
     if is_first_line:
         output_file.write(isExpressionValid(line))
