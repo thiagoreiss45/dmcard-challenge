@@ -1,7 +1,10 @@
 import random
 import time
+
 start_time = time.time()
-f = open("myfile100.txt", "r")
+
+input_file = open("insira_aqui_o_arquivo", "r")
+output_file = open("output.txt", "w")
 
 def isExpressionValid(exp):
     var = 0
@@ -11,20 +14,25 @@ def isExpressionValid(exp):
         elif c == '(':
             var += 1
         elif c == ')':
-            var -=1
+            var -= 1
     if var == 0:
         return 'correct'
     else:
         return 'incorrect'
 
-output = open("output.txt", "w")
-aux = 0
-for l in f:
-    if aux == 0:
-        output.write(isExpressionValid(l))
-        aux += 1
+
+is_first_line = True
+
+# Percorrendo cada linha do arquivo de input e escrevendo o retorno no arquivo de output
+for line in input_file:
+    if is_first_line:
+        output_file.write(isExpressionValid(line))
+        is_first_line = False
     else:
-        output.write('\n' + isExpressionValid(l))
-output.close()
-f.close()
-print("--- %s seconds ---" % (time.time() - start_time))
+        output_file.write('\n' + isExpressionValid(line))
+
+output_file.close()
+input_file.close()
+
+# Printando o tempo de execução do programa
+print("Execution time: %s seconds " % (time.time() - start_time))
