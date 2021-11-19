@@ -20,7 +20,11 @@ python parentheses-challenge.py
 # Algoritmo
 
 A função recebe a expressão e percorre todos os caracteres da string, caso ele encontre ```'('``` ```var``` é incrementada, caso encontre ```')'``` ```var``` é decrementada. 
-Uma expressão válida, é uma expressão onde ```var``` seja igual a 0, ou seja, cada ```'('``` anula um ```')'```, porém, se ```var``` se tornar negativo, significa que algum parênteses foi fechado antes de ser aberto, e o programa retorna 'incorrect'.
+Uma expressão válida, é uma expressão onde ```var``` seja igual a 0, ou seja, cada ```'('``` anula um ```')'```, porém:
+
+>se ```var < 0``` significa que algum parênteses foi fechado sem ser aberto e o programa retorna 'incorrect'.
+
+>se ```var > 0``` significa que algum parêtenses foi aberto sem ser fechado e o programa retorna 'incorrect'.
 
 ```python
 def isExpressionValid(exp):
