@@ -13,7 +13,9 @@ f = open("test.txt")
 f = open("C:/Python33/test.txt")
 ```
 Para executar: 
-
+```
+python parentheses-challenge.py
+```
 
 # Algoritmo
 
